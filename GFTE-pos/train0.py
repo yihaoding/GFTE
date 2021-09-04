@@ -1,4 +1,8 @@
 from __future__ import print_function
+from sys import path
+# This is a colab running version
+path.append('/content/GFTE')
+path.append('/content/GFTE/GFTE-pos')
 import argparse
 import random
 import torch
@@ -57,11 +61,11 @@ torch.manual_seed(opt.manualSeed)
 #    print("WARNING: You have a CUDA device, so you should probably run with --cuda")
 
 
-root_path = ''
+root_path = '/content/scitsr2/SciTSR/train'
 train_dataset = ScitsrDataset(root_path)
 # root_path = ''
 # test_dataset = ScitsrDataset(root_path)
-root_path = ''
+root_path = '/content/scitsr2/SciTSR/test'
 eval_dataset = ScitsrDataset(root_path)
 # print("samples:",len(train_dataset),len(test_dataset))
 print("samples:",len(train_dataset),len(eval_dataset))
